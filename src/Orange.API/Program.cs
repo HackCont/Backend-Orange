@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Orange.API.Configurations;
 using Orange.API.Data;
+using Orange.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
