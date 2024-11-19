@@ -1,6 +1,0 @@
-@Orange.API_HostAddress = http://localhost:5199
-
-GET {{Orange.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
