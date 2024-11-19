@@ -1,11 +1,15 @@
+using Microsoft.EntityFrameworkCore;
 using Orange.API.Configurations;
+using Orange.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerSetup();
-builder.Services.AddAuthenticationSetup();
+builder.Services.AddAuthenticationSetup(builder.Configuration);
+builder.Services.AddDbContext<AppDbContext>(options =>
+	options.UseNpgsql(builder.Configuration.GetConnectionString("DatabaseConnection")));
 
 var app = builder.Build();
 
@@ -22,5 +26,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MigrateDatabase();
 
 app.Run();
