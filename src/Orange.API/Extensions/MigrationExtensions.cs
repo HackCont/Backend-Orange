@@ -5,7 +5,7 @@ using Orange.API.Data;
 
 public static class MigrationExtensions
 {
-	public static IHost MigrateDatabase(this IHost host)
+	public static IHost UseMigrateDatabase(this IHost host)
 	{
 		using (var scope = host.Services.CreateScope())
 		{
@@ -14,6 +14,7 @@ public static class MigrationExtensions
 			try
 			{
 				var context = services.GetRequiredService<AppDbContext>();
+
 				context.Database.Migrate();
 			}
 			catch (Exception ex)
