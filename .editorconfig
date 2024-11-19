@@ -5,6 +5,15 @@
 # This file is the top-most EditorConfig file
 root = true
 
+# Ignore rules
+[*.cs] 
+# IDE1006: Naming Styles 
+dotnet_diagnostic.IDE1006.severity = none
+# IDE0021: Use expression body for constructor
+dotnet_diagnostic.IDE0021.severity = none
+# IDE0009: Add this or me qualification
+dotnet_diagnostic.IDE0009.severity = none
+
 # All Files
 [*]
 charset = utf-8
@@ -61,7 +70,7 @@ csharp_space_around_binary_operators = before_and_after
 indent_style = tab
 
 # Visual Studio XML Project Files
-[*.{csproj,vbproj,vcxproj.filters,proj,projitems,shproj}]
+[*.{csproj,proj,projitems,shproj}]
 indent_size = 2
 
 # XML Configuration Files
@@ -101,7 +110,7 @@ indent_style = tab
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/configuration-options#scope
 ##########################################
 
-[*.{cs,csx,cake,vb,vbx}]
+[*.cs]
 # Default Severity for all .NET Code Style rules below
 dotnet_analyzer_diagnostic.severity = warning
 
@@ -112,7 +121,7 @@ dotnet_analyzer_diagnostic.severity = warning
 
 # .NET Style Rules
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/language-rules#net-style-rules
-[*.{cs,csx,cake,vb,vbx}]
+[*.cs]
 # "this." and "Me." qualifiers
 dotnet_style_qualification_for_field = true:warning
 dotnet_style_qualification_for_property = true:warning
@@ -158,7 +167,7 @@ csharp_style_prefer_null_check_over_type_check = true:warning
 
 # C# Style Rules
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/language-rules#c-style-rules
-[*.{cs,csx,cake}]
+[*.cs]
 # 'var' preferences
 csharp_style_var_for_built_in_types = true:warning
 csharp_style_var_when_type_is_apparent = true:warning
@@ -204,12 +213,13 @@ csharp_prefer_static_local_function = true:warning
 ##########################################
 
 # .NET Unnecessary code rules
-[*.{cs,csx,cake,vb,vbx}]
+[*.cs]
 dotnet_code_quality_unused_parameters = all:warning
 dotnet_remove_unnecessary_suppression_exclusions = none:warning
 
 # C# Unnecessary code rules
-[*.{cs,csx,cake}]
+# Ignore
+[*.cs]
 csharp_style_unused_value_expression_statement_preference = discard_variable:none
 dotnet_diagnostic.IDE0058.severity = none
 csharp_style_unused_value_assignment_preference = discard_variable:none
@@ -222,7 +232,7 @@ dotnet_diagnostic.IDE0059.severity = none
 
 # .NET formatting rules
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#net-formatting-rules
-[*.{cs,csx,cake,vb,vbx}]
+[*.cs]
 # Organize using directives
 dotnet_sort_system_directives_first = true
 dotnet_separate_import_directive_groups = false
@@ -232,7 +242,7 @@ dotnet_diagnostic.IDE0130.severity = suggestion
 
 # C# formatting rules
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#c-formatting-rules
-[*.{cs,csx,cake}]
+[*.cs]
 # Newline options
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#new-line-options
 csharp_new_line_before_open_brace = all
@@ -287,7 +297,7 @@ csharp_style_namespace_declarations = file_scoped:warning
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/naming-rules
 ##########################################
 
-[*.{cs,csx,cake,vb,vbx}]
+[*.cs]
 
 ##########################################
 # Styles
