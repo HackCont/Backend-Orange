@@ -11,10 +11,10 @@ public class TagConfiguration : IEntityTypeConfiguration<Tag>
 		builder.ToTable("Tags");
 		builder.HasKey(t => t.Id);
 		builder.Property(t => t.Id)
-		   .HasDefaultValueSql("uuid_generate_v4()");
+			.HasDefaultValueSql("uuid_generate_v4()");
 
 		builder.Property(t => t.Name)
-		   .HasMaxLength(50)
-		   .IsRequired();
+			.HasMaxLength(50)
+			.IsRequired();
 	}
 }

@@ -18,7 +18,7 @@ public static class AuthExtensions
 			options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 			options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 		})
-			.AddJwtBearer(options =>
+		.AddJwtBearer(options =>
 		{
 			options.Authority = keycloakSettings.Authority;
 			options.Audience = keycloakSettings.Audience;
