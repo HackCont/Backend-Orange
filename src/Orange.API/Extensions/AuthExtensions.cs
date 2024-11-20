@@ -25,10 +25,13 @@ public static class AuthExtensions
 			options.RequireHttpsMetadata = keycloakSettings.RequireHttpsMetadata;
 			options.TokenValidationParameters = new TokenValidationParameters
 			{
-				ValidateAudience = true,
 				ValidateIssuer = true,
+				ValidIssuer = keycloakSettings.Authority,
+				ValidateAudience = true,
+				ValidAudience = keycloakSettings.Audience,
 				ValidateLifetime = true,
-				ValidateIssuerSigningKey = true,
+				ClockSkew = TimeSpan.Zero,
+				ValidateIssuerSigningKey = true
 			};
 		});
 
