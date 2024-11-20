@@ -11,13 +11,13 @@
 
   <ItemGroup>
     <Compile Remove="DTOs\**" />
-    <Compile Remove="Services\**" />
+    <Compile Remove="Repositories\Interfaces\**" />
     <Content Remove="DTOs\**" />
-    <Content Remove="Services\**" />
+    <Content Remove="Repositories\Interfaces\**" />
     <EmbeddedResource Remove="DTOs\**" />
-    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="Repositories\Interfaces\**" />
     <None Remove="DTOs\**" />
-    <None Remove="Services\**" />
+    <None Remove="Repositories\Interfaces\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,8 +38,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\UnitOfWork\" />
     <Folder Include="Models\DTOs\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Repositories\Project\" />
+    <Folder Include="Repositories\User\" />
+    <Folder Include="Services\Tag\" />
+    <Folder Include="Services\Project\" />
+    <Folder Include="Services\User\" />
   </ItemGroup>
 
 </Project>
